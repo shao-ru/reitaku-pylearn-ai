@@ -1,7 +1,7 @@
 [project]
-name = "ru-ai-education-2026"
+name = "reitaku-pylearn-ai"
 version = "0.1.0"
-description = "LearnLab に AI 学習支援機能を追加する開発リポジトリ（教材コンテンツと教材ツール）"
+description = "Python プログラミング教育の知識グラフ・教材・AI 学習支援（麗澤大学）"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

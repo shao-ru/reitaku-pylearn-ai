@@ -1,6 +1,20 @@
-# ru-ai-education-2026
+# reitaku-pylearn-ai
 
-LearnLab（ru-ai-education）に AI学習支援機能を追加する 2026年度後期のゼミ開発リポジトリ。
+Python プログラミング教育のための知識グラフ・教材・AI 学習支援（麗澤大学 ゼミ開発リポジトリ）。
+
+- **このリポジトリ（reitaku-pylearn-ai）**：知識グラフ、講義ノート・練習問題、教材ツール。今後、AI 学習支援サービス（出題・推薦、エラー診断、ヒント）もここで開発する。
+- **練習プラットフォーム（reitaku-pylearn）**：学生がコードを書き、問題を解く Web システム（現在の暫定名 LearnLab）。このリポジトリの教材を取り込んで使う。
+
+## はじめに
+
+```powershell
+git clone https://github.com/shao-ru/reitaku-pylearn-ai.git
+cd reitaku-pylearn-ai
+uv sync
+uv run python -m tools.edu_content validate content/
+```
+
+`エラー 0 件` と出れば準備完了。教材を作る・追加する手順は [docs/authoring_guide.md](docs/authoring_guide.md) を参照。
 
 ## 構成
 
@@ -21,7 +35,7 @@ docs/
   schema/           JSON Schema
   todo.md           TODO
 tools/
-  edu_content/      教材の検証・ID 付与・JSON 出力・LearnLab 教材出力ツール
+  edu_content/      教材の検証・ID 付与・JSON 出力・練習プラットフォーム用の教材出力ツール
 ```
 
 ## 教材ツール

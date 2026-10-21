@@ -1,6 +1,6 @@
 # 教材の作成・追加ガイド
 
-版：v1.0（2026-10-21）
+版：v1.1（2026-10-21）
 
 この文書は、知識点・講義ノート・練習問題・単元・題単を**新しく作る／追加する**ときの手順書である。ゼミのメンバーが同じ手順で作業できるように、作業の種類ごとに手順と注意点をまとめる。
 
@@ -16,14 +16,25 @@
 
 ## 0. はじめに（初回だけ）
 
+**必要なもの**：GitHub アカウント、[Git](https://git-scm.com/)、[uv](https://docs.astral.sh/uv/)。リポジトリへの書き込み権限は教員が招待する（GitHub から届く招待メールを承認する）。
+
 ```powershell
-git clone <リポジトリ>            # または共有フォルダからコピー
-cd ru-ai-education-2026
+git clone https://github.com/shao-ru/reitaku-pylearn-ai.git
+cd reitaku-pylearn-ai
 uv sync                           # Python 3.12 と依存パッケージを入れる
 uv run python -m tools.edu_content validate content/
 ```
 
 最後のコマンドで `エラー 0 件` と出れば準備完了。ipynb は Jupyter（JupyterLab）または VS Code で編集する。
+
+**コミットに使う名前とメールアドレス**：公開リポジトリなので、コミットに記録されるメールアドレスは誰でも見られる。大学や個人のアドレスではなく、GitHub の非公開用アドレスを設定する（GitHub → Settings → Emails の「Keep my email addresses private」を有効にすると表示される `数字+ユーザー名@users.noreply.github.com`）。
+
+```powershell
+git config user.name  "GitHub のユーザー名"
+git config user.email "数字+ユーザー名@users.noreply.github.com"
+```
+
+`--global` を付けなければ、このリポジトリだけの設定になる。
 
 ---
 
@@ -50,6 +61,7 @@ git push -u origin feature/<名前>-<作業内容>
 - [ ] 新しい問題に ID が付いている（`assign-ids` 済み）
 - [ ] グラフ（`graph.yaml`・`units.yaml`）を変えた場合、`graph-doc` で一覧を更新した
 - [ ] `build/`・`.venv/` をコミットしていない（`.gitignore` 済み）
+- [ ] コミットのメールアドレスが noreply アドレスになっている（`git log -1 --format=%ae` で確認）
 - [ ] 練習問題の ipynb は出力をクリアした（Jupyter の「Clear All Outputs」。差分が小さくなる）
 - [ ] 他の人の担当ファイルを書き換えていない（§8）
 
