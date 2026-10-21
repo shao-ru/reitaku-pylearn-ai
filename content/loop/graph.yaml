@@ -1,0 +1,50 @@
+# 知識グラフ：繰り返し（文法層のみ。累積・フィルタなどの定型パターンは pat に置く）
+type: graph
+topic: loop
+title: 繰り返し
+
+knowledge_points:
+  - {id: loop_01, title: for文の基本構文, layer: 文法, difficulty: 1, keywords: [for, in, ループ変数, インデント, 繰り返しが必要な理由]}
+  - {id: loop_02, title: range と決まった回数の繰り返し, layer: 文法, difficulty: 2, keywords: [range(n), "range(start, end)", 回数繰り返し]}
+  - {id: loop_03, title: range のステップ, layer: 文法, difficulty: 2, keywords: ["range(start, end, step)", 逆順]}
+  - {id: loop_04, title: 文字列のループ, layer: 文法, difficulty: 2, keywords: [for ch in 文字列]}
+  - {id: loop_05, title: 辞書と for 文, layer: 文法, difficulty: 3, keywords: [dict, .keys(), .values(), .items()]}
+  - {id: loop_06, title: enumerate, layer: 文法, difficulty: 3, keywords: [enumerate, start]}
+  - {id: loop_07, title: zip, layer: 文法, difficulty: 3, keywords: [zip]}
+  - {id: loop_08, title: 二重ループ, layer: 文法, difficulty: 4, keywords: [ネスト, 外側のループ, 内側のループ]}
+  - {id: loop_09, title: break と continue, layer: 文法, difficulty: 3, keywords: [break, continue]}
+  - {id: loop_10, title: リスト内包表記, layer: 文法, difficulty: 4, keywords: [内包表記]}
+  - {id: loop_11, title: while 文, layer: 文法, difficulty: 2, keywords: [while, 条件式, 無限ループ]}
+
+relations:
+  - {from: col_01, to: loop_01, type: prerequisite, note: for でリストを順に処理する}
+  - {from: loop_01, to: loop_02, type: prerequisite}
+  - {from: loop_02, to: loop_03, type: prerequisite}
+  - {from: loop_01, to: loop_04, type: prerequisite}
+  - {from: var_03, to: loop_04, type: prerequisite}
+  - {from: loop_01, to: loop_05, type: prerequisite}
+  - {from: col_07, to: loop_05, type: prerequisite}
+  - {from: loop_01, to: loop_06, type: prerequisite}
+  - {from: col_05, to: loop_06, type: prerequisite, note: for i, v in … のアンパック}
+  - {from: loop_01, to: loop_07, type: prerequisite}
+  - {from: col_05, to: loop_07, type: prerequisite}
+  - {from: loop_02, to: loop_08, type: prerequisite}
+  - {from: loop_01, to: loop_09, type: prerequisite}
+  - {from: cond_01, to: loop_09, type: prerequisite, note: break・continue は if と組み合わせて使う}
+  - {from: pat_05, to: loop_10, type: prerequisite, note: 内包表記は append によるリスト作成の短縮形}
+  - {from: cond_01, to: loop_11, type: prerequisite, note: while の条件式}
+  - {from: loop_01, to: loop_11, type: prerequisite, weight: 0.8, note: for との違いを比較して学ぶ}
+
+  - {from: loop_02, to: col_03, type: related_error, weight: 0.8, note: range もスライスも終点を含まない}
+  - {from: loop_08, to: loop_09, type: related_error, weight: 0.7, note: 二重ループ内の break は内側のループだけを抜ける}
+  - {from: loop_09, to: loop_11, type: related_error, weight: 0.7, note: while 内の continue でカウンタ更新が飛ばされ無限ループになる}
+  - {from: loop_04, to: var_07, type: related, note: 文字列の各文字へのアクセス}
+  - {from: loop_10, to: pat_04, type: related, note: 条件つき内包表記はフィルタの短縮形}
+
+# 単元（このトピックの一部を範囲とするもの。トピック全体の単元「loop」は自動で作られる）
+units:
+  - id: u_loop_for
+    title: for文 総合演習
+    description: for 文の文法と基本パターンを組み合わせて、実際の場面に近い問題を解く。
+    knowledge_points: [loop_01, loop_02, loop_03, loop_04, loop_05, loop_06, loop_07, loop_08, loop_09, loop_10,
+                       pat_01, pat_02, pat_03, pat_04, pat_05, pat_06, pat_08]

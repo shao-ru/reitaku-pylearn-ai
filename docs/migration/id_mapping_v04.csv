@@ -1,0 +1,125 @@
+旧ID,新ID,新ファイル,知識点（先頭が主）
+loop_01_q01,loop_01_q01,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_01_q02,loop_01_q02,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_01_q03,loop_01_q03,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_01_q04,loop_01_q04,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_01_q05,loop_01_q05,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_01_q06,loop_01_q06,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_01_q07,loop_01_q07,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_01_q08,loop_01_q08,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_01_q09,loop_01_q09,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_01_q10,loop_01_q10,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_02_q01,loop_01_q11,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_02_q02,loop_01_q12,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_02_q03,loop_01_q13,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_02_q04,loop_01_q14,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_02_q05,loop_01_q15,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_02_q06,loop_01_q16,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_02_q07,loop_01_q17,loop_01_for文の基本構文_ex01.ipynb,"loop_01, cond_01"
+loop_02_q08,loop_01_q18,loop_01_for文の基本構文_ex01.ipynb,"loop_01, cond_02"
+loop_02_q09,loop_01_q19,loop_01_for文の基本構文_ex01.ipynb,"loop_01, cond_01"
+loop_02_q10,loop_01_q20,loop_01_for文の基本構文_ex01.ipynb,loop_01
+loop_03_q01,loop_02_q01,loop_02_rangeと決まった回数の繰り返し_ex01.ipynb,loop_02
+loop_03_q02,loop_02_q02,loop_02_rangeと決まった回数の繰り返し_ex01.ipynb,loop_02
+loop_03_q03,loop_02_q03,loop_02_rangeと決まった回数の繰り返し_ex01.ipynb,loop_02
+loop_03_q04,loop_02_q04,loop_02_rangeと決まった回数の繰り返し_ex01.ipynb,loop_02
+loop_03_q05,loop_02_q05,loop_02_rangeと決まった回数の繰り返し_ex01.ipynb,loop_02
+loop_03_q06,loop_02_q06,loop_02_rangeと決まった回数の繰り返し_ex01.ipynb,loop_02
+loop_03_q07,loop_02_q07,loop_02_rangeと決まった回数の繰り返し_ex01.ipynb,"loop_02, cond_01"
+loop_03_q08,loop_02_q08,loop_02_rangeと決まった回数の繰り返し_ex01.ipynb,loop_02
+loop_03_q09,loop_02_q09,loop_02_rangeと決まった回数の繰り返し_ex01.ipynb,loop_02
+loop_03_q10,loop_02_q10,loop_02_rangeと決まった回数の繰り返し_ex01.ipynb,"loop_02, cond_01"
+loop_03_c01,loop_02_c01,loop_02_rangeと決まった回数の繰り返し_ex02.ipynb,loop_02
+loop_03_c02,loop_02_c02,loop_02_rangeと決まった回数の繰り返し_ex02.ipynb,loop_02
+loop_03_c03,pat_01_c01,pat_01_累積_ex01.ipynb,"pat_01, loop_02, func_03"
+loop_03-e55511,loop_02_q11,loop_02_rangeと決まった回数の繰り返し_ex02.ipynb,loop_02
+loop_03-889acf,loop_02_c03,loop_02_rangeと決まった回数の繰り返し_ex02.ipynb,"loop_02, io_03"
+loop_03-7a68a2,pat_01_c02,pat_01_累積_ex01.ipynb,"pat_01, loop_02"
+loop_04_q01,loop_02_q12,loop_02_rangeと決まった回数の繰り返し_ex01.ipynb,loop_02
+loop_04_q02,pat_01_q01,pat_01_累積_ex01.ipynb,"pat_01, loop_02"
+loop_04_q03,pat_01_q02,pat_01_累積_ex01.ipynb,"pat_01, loop_02"
+loop_04_q04,pat_01_q03,pat_01_累積_ex01.ipynb,"pat_01, loop_02"
+loop_04_q05,pat_01_q04,pat_01_累積_ex01.ipynb,"pat_01, loop_02"
+loop_04_q06,pat_02_q01,pat_02_カウント_ex01.ipynb,"pat_02, loop_02"
+loop_04_q07,pat_01_q05,pat_01_累積_ex01.ipynb,"pat_01, loop_01"
+loop_04_q08,pat_01_q06,pat_01_累積_ex01.ipynb,"pat_01, loop_02"
+loop_04_q09,pat_01_q07,pat_01_累積_ex01.ipynb,"pat_01, loop_02"
+loop_04_q10,pat_01_q08,pat_01_累積_ex01.ipynb,"pat_01, cond_01"
+loop_05_q01,col_02_q01,pat_05_変換_ex01.ipynb,col_02
+loop_05_q02,pat_05_q01,pat_05_変換_ex01.ipynb,pat_05
+loop_05_q03,pat_05_q02,pat_05_変換_ex01.ipynb,"pat_05, loop_02"
+loop_05_q04,pat_05_q03,pat_05_変換_ex01.ipynb,"pat_05, var_08"
+loop_05_q05,pat_04_q01,pat_04_フィルタ_ex01.ipynb,pat_04
+loop_05_q06,pat_05_q04,pat_05_変換_ex01.ipynb,"pat_05, loop_02"
+loop_05_q07,pat_05_q05,pat_05_変換_ex01.ipynb,"pat_05, loop_02"
+loop_05_q08,pat_04_q02,pat_04_フィルタ_ex01.ipynb,pat_04
+loop_05_q09,pat_04_q03,pat_04_フィルタ_ex01.ipynb,"pat_04, cond_02"
+loop_05_q10,pat_05_q06,pat_05_変換_ex01.ipynb,pat_05
+loop_06_q01,loop_05_q01,loop_05_辞書とfor文_ex01.ipynb,loop_05
+loop_06_q02,loop_05_q02,loop_05_辞書とfor文_ex01.ipynb,loop_05
+loop_06_q03,loop_05_q03,loop_05_辞書とfor文_ex01.ipynb,loop_05
+loop_06_q04,loop_05_q04,loop_05_辞書とfor文_ex01.ipynb,loop_05
+loop_06_q05,loop_05_q05,loop_05_辞書とfor文_ex01.ipynb,"loop_05, cond_01"
+loop_06_q06,loop_05_q06,loop_05_辞書とfor文_ex01.ipynb,"loop_05, pat_01"
+loop_06_q07,loop_05_q07,loop_05_辞書とfor文_ex01.ipynb,"loop_05, pat_05"
+loop_06_q08,loop_05_q08,loop_05_辞書とfor文_ex01.ipynb,"loop_05, cond_01"
+loop_06_q09,loop_05_q09,loop_05_辞書とfor文_ex01.ipynb,"loop_05, pat_02"
+loop_06_q10,loop_05_q10,loop_05_辞書とfor文_ex01.ipynb,"loop_05, pat_04"
+loop_07_q01,pat_01_q09,pat_01_累積_ex01.ipynb,pat_01
+loop_07_q02,pat_03_q01,pat_03_最大値と最小値_ex01.ipynb,pat_03
+loop_07_q03,pat_03_q02,pat_03_最大値と最小値_ex01.ipynb,pat_03
+loop_07_q04,pat_03_q03,pat_03_最大値と最小値_ex01.ipynb,pat_03
+loop_07_q05,pat_01_q10,pat_01_累積_ex01.ipynb,"pat_01, pat_02, cond_01"
+loop_07_q06,pat_01_q11,pat_01_累積_ex01.ipynb,pat_01
+loop_07_q07,pat_01_q12,pat_01_累積_ex01.ipynb,"pat_01, loop_05"
+loop_07_q08,pat_03_q04,pat_03_最大値と最小値_ex01.ipynb,pat_03
+loop_07_q09,pat_03_q05,pat_03_最大値と最小値_ex01.ipynb,pat_03
+loop_07_q10,pat_01_q13,pat_01_累積_ex01.ipynb,"pat_01, pat_02, loop_05"
+loop_08_q01,loop_08_q01,loop_08_二重ループ_ex01.ipynb,loop_08
+loop_08_q02,loop_08_q02,loop_08_二重ループ_ex01.ipynb,loop_08
+loop_08_q03,loop_08_q03,loop_08_二重ループ_ex01.ipynb,loop_08
+loop_08_q04,loop_08_q04,loop_08_二重ループ_ex01.ipynb,"loop_08, cond_01"
+loop_08_q05,loop_08_q05,loop_08_二重ループ_ex01.ipynb,loop_08
+loop_08_q06,loop_08_q06,loop_08_二重ループ_ex01.ipynb,loop_08
+loop_08_q07,loop_08_q07,loop_08_二重ループ_ex01.ipynb,"loop_08, pat_02"
+loop_08_q08,loop_08_q08,loop_08_二重ループ_ex01.ipynb,"loop_08, cond_01"
+loop_08_q09,loop_08_q09,loop_08_二重ループ_ex01.ipynb,"loop_08, pat_01"
+loop_08_q10,loop_08_q10,loop_08_二重ループ_ex01.ipynb,"loop_08, pat_04"
+loop_09_q01,loop_09_q01,loop_09_breakとcontinue_ex01.ipynb,loop_09
+loop_09_q02,loop_09_q02,loop_09_breakとcontinue_ex01.ipynb,loop_09
+loop_09_q03,loop_09_q03,loop_09_breakとcontinue_ex01.ipynb,loop_09
+loop_09_q04,loop_09_q04,loop_09_breakとcontinue_ex01.ipynb,loop_09
+loop_09_q05,loop_09_q05,loop_09_breakとcontinue_ex01.ipynb,loop_09
+loop_09_q06,loop_09_q06,loop_09_breakとcontinue_ex01.ipynb,loop_09
+loop_09_q07,loop_09_q07,loop_09_breakとcontinue_ex01.ipynb,"loop_09, pat_01"
+loop_09_q08,loop_09_q08,loop_09_breakとcontinue_ex01.ipynb,"loop_09, pat_01"
+loop_09_q09,loop_09_q09,loop_09_breakとcontinue_ex01.ipynb,"loop_09, pat_04"
+loop_09_q10,loop_09_q10,loop_09_breakとcontinue_ex01.ipynb,"loop_09, pat_06"
+loop_10_q01,loop_10_q01,loop_10_リスト内包表記_ex01.ipynb,loop_10
+loop_10_q02,loop_10_q02,loop_10_リスト内包表記_ex01.ipynb,loop_10
+loop_10_q03,loop_10_q03,loop_10_リスト内包表記_ex01.ipynb,loop_10
+loop_12_q01,loop_11_q01,loop_11_while文_ex01.ipynb,loop_11
+loop_12_q02,loop_11_q02,loop_11_while文_ex01.ipynb,loop_11
+loop_12_q03,loop_11_q03,loop_11_while文_ex01.ipynb,loop_11
+loop_12_q04,loop_11_q04,loop_11_while文_ex01.ipynb,loop_11
+loop_12_q05,loop_11_q05,loop_11_while文_ex01.ipynb,loop_11
+loop_12_q06,loop_11_q06,loop_11_while文_ex01.ipynb,loop_11
+loop_12_q07,loop_11_q07,loop_11_while文_ex01.ipynb,loop_11
+loop_12_q08,loop_11_q08,loop_11_while文_ex01.ipynb,"loop_11, loop_09"
+loop_12_q09,loop_11_q09,loop_11_while文_ex01.ipynb,"loop_11, loop_09"
+loop_12_q10,loop_11_q10,loop_11_while文_ex01.ipynb,loop_11
+loop_13_q01,u_loop_for_q01,u_loop_for_for総合演習_ex01.ipynb,pat_02
+loop_13_q02,u_loop_for_q02,u_loop_for_for総合演習_ex01.ipynb,"pat_01, col_05"
+loop_13_q03,u_loop_for_q03,u_loop_for_for総合演習_ex01.ipynb,pat_03
+loop_13_q04,u_loop_for_q04,u_loop_for_for総合演習_ex01.ipynb,loop_06
+loop_13_q05,u_loop_for_q05,u_loop_for_for総合演習_ex01.ipynb,"loop_07, cond_01"
+loop_13_q06,u_loop_for_q06,u_loop_for_for総合演習_ex01.ipynb,"loop_04, pat_02"
+loop_13_q07,u_loop_for_q07,u_loop_for_for総合演習_ex01.ipynb,"loop_05, pat_01"
+loop_13_q08,u_loop_for_q08,u_loop_for_for総合演習_ex01.ipynb,"loop_05, cond_01"
+loop_13_q09,u_loop_for_q09,u_loop_for_for総合演習_ex01.ipynb,"loop_09, pat_05"
+loop_13_q10,u_loop_for_q10,u_loop_for_for総合演習_ex01.ipynb,"loop_08, io_01"
+loop_13_q11,u_loop_for_q11,u_loop_for_for総合演習_ex01.ipynb,"loop_03, pat_01"
+loop_13_q12,u_loop_for_q12,u_loop_for_for総合演習_ex01.ipynb,pat_04
+loop_13_q13,u_loop_for_q13,u_loop_for_for総合演習_ex01.ipynb,"loop_09, pat_01"
+loop_13_q14,u_loop_for_q14,u_loop_for_for総合演習_ex01.ipynb,pat_08
+loop_13_q15,u_loop_for_q15,u_loop_for_for総合演習_ex01.ipynb,"pat_06, loop_06"

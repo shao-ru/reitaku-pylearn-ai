@@ -1,0 +1,16 @@
+# 知識グラフ：条件分岐
+type: graph
+topic: cond
+title: 条件分岐
+
+knowledge_points:
+  - {id: cond_01, title: if 文, layer: 文法, difficulty: 1}
+  - {id: cond_02, title: else と elif, layer: 文法, difficulty: 2}
+  - {id: cond_03, title: 論理演算（and・or・not）, layer: 文法, difficulty: 2}
+  - {id: cond_04, title: 条件分岐のネスト, layer: 文法, difficulty: 3}
+
+relations:
+  - {from: var_04, to: cond_01, type: prerequisite}
+  - {from: cond_01, to: cond_02, type: prerequisite}
+  - {from: var_04, to: cond_03, type: prerequisite}
+  - {from: cond_02, to: cond_04, type: prerequisite}

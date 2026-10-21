@@ -1,0 +1,12 @@
+# 題単（動的選題）：条件に合う問題の中から、推薦アルゴリズムが学生ごとに選ぶ。日常の練習・復習向け。
+type: set
+id: set_loop_practice_adaptive
+title: for文 おまかせ練習
+description: 単元「for文 総合演習」の範囲（for の文法 + 基本パターン）から、習熟度に合わせて10問出題する。
+mode: adaptive
+selection:
+  units: [u_loop_for]               # 単元で範囲を指定（knowledge_points・topics でも指定できる）
+  difficulty: [1, 5]                # 難易度の範囲（両端を含む）
+  question_types: [choice, code]    # 出題する形式
+  count: 10                         # 1回の練習で出す問題数
+  recommender: MyRecommender        # 使う推薦アルゴリズム（BaseRecommender のサブクラス名）

@@ -1,0 +1,16 @@
+# ================================================================
+# 題単テンプレート（動的選題）
+#   条件に合う問題の中から、推薦アルゴリズムが学生ごとに選んで出題する。
+#   日常の練習・復習向け。問題そのものは題庫に登録済みのものだけを使う。
+# ================================================================
+type: set
+id: set_tmpl_adaptive
+title: 題単のタイトル
+mode: adaptive           # adaptive = 動的選題
+selection:
+  knowledge_points: [tmpl_01, tmpl_02]   # 対象の知識点（topics と併用可）
+  # topics: [template]                   # トピック単位で指定する場合
+  difficulty: [1, 3]                     # 難易度の範囲（両端を含む、省略時 1〜9）
+  question_types: [choice, code]         # 出題する形式（省略時は全形式）
+  count: 3                               # 1回に出題する問題数
+  recommender: MyRecommender             # 推薦アルゴリズム名（BaseRecommender のサブクラス）

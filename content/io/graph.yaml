@@ -1,0 +1,22 @@
+# 知識グラフ：入出力
+type: graph
+topic: io
+title: 入出力
+
+knowledge_points:
+  - {id: io_01, title: print の基本（複数の値・sep・end）, layer: 文法, difficulty: 1, keywords: [print, sep, end]}
+  - {id: io_02, title: input（入力は常に文字列）, layer: 文法, difficulty: 1, keywords: [input]}
+  - {id: io_03, title: 入力値を数値に変換する, layer: 文法, difficulty: 2, keywords: [int(input()), float(input())]}
+  - {id: io_04, title: f 文字列による整形出力, layer: 文法, difficulty: 2, keywords: [f文字列, 書式指定]}
+  - {id: io_05, title: 1行の複数の値を読む（split と map）, layer: 文法, difficulty: 3, keywords: [split, map, list]}
+
+relations:
+  - {from: var_01, to: io_01, type: prerequisite}
+  - {from: var_03, to: io_02, type: prerequisite}
+  - {from: io_02, to: io_03, type: prerequisite}
+  - {from: var_05, to: io_03, type: prerequisite}
+  - {from: io_01, to: io_04, type: prerequisite}
+  - {from: io_03, to: io_05, type: prerequisite}
+  - {from: var_08, to: io_05, type: prerequisite}
+  - {from: io_02, to: var_05, type: related_error, weight: 0.9, note: input の結果を数値に変換し忘れる（TypeError や文字列の連結になる）}
+  - {from: io_04, to: var_03, type: related, note: f 文字列は文字列の組み立て方の一つ}

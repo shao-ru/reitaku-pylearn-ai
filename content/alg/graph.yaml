@@ -1,0 +1,18 @@
+# 知識グラフ：基本アルゴリズム（アルゴリズム層。初期範囲外の参考）
+type: graph
+topic: alg
+title: 基本アルゴリズム
+
+knowledge_points:
+  - {id: alg_01, title: 素数判定, layer: アルゴリズム, difficulty: 5}
+  - {id: alg_02, title: 最大公約数（ユークリッドの互除法）, layer: アルゴリズム, difficulty: 5}
+  - {id: alg_03, title: バブルソート, layer: アルゴリズム, difficulty: 6}
+
+relations:
+  - {from: pat_06, to: alg_01, type: prerequisite}
+  - {from: loop_02, to: alg_01, type: prerequisite}
+  - {from: var_02, to: alg_01, type: prerequisite, note: 割り算の余り %}
+  - {from: loop_11, to: alg_02, type: prerequisite}
+  - {from: var_02, to: alg_02, type: prerequisite}
+  - {from: pat_09, to: alg_03, type: prerequisite}
+  - {from: loop_08, to: alg_03, type: prerequisite}

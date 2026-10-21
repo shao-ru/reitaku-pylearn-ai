@@ -1,0 +1,27 @@
+# 知識グラフ：コレクション
+type: graph
+topic: col
+title: コレクション
+
+knowledge_points:
+  - {id: col_01, title: リストの作成とインデックス, layer: 文法, difficulty: 1}
+  - {id: col_02, title: リストの操作（append・remove・pop・len）, layer: 文法, difficulty: 2}
+  - {id: col_03, title: リストのスライス, layer: 文法, difficulty: 2}
+  - {id: col_04, title: 組み込み関数と in（sum・max・min・sorted）, layer: 文法, difficulty: 2}
+  - {id: col_05, title: タプルとアンパック, layer: 文法, difficulty: 2}
+  - {id: col_06, title: 辞書の作成・参照・更新, layer: 文法, difficulty: 2}
+  - {id: col_07, title: 辞書のメソッド（keys・values・items・get）, layer: 文法, difficulty: 3}
+  - {id: col_08, title: 集合, layer: 文法, difficulty: 3}
+  - {id: col_09, title: 2次元リスト, layer: 文法, difficulty: 4}
+
+relations:
+  - {from: var_01, to: col_01, type: prerequisite}
+  - {from: col_01, to: col_02, type: prerequisite}
+  - {from: col_01, to: col_03, type: prerequisite}
+  - {from: col_01, to: col_04, type: prerequisite}
+  - {from: col_01, to: col_05, type: prerequisite}
+  - {from: var_01, to: col_06, type: prerequisite}
+  - {from: col_06, to: col_07, type: prerequisite}
+  - {from: col_01, to: col_08, type: prerequisite}
+  - {from: col_01, to: col_09, type: prerequisite}
+  - {from: col_03, to: var_07, type: related, note: 文字列とリストのスライスは同じ規則}

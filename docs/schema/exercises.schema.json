@@ -1,0 +1,337 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "exercises.schema.json",
+  "title": "練習問題ファイル（export の出力）",
+  "description": "練習問題 ipynb 1ファイルを変換した JSON。AI サービスへの取り込みはこの形式だけを受け付ける。",
+  "type": "object",
+  "required": [
+    "type",
+    "id",
+    "title",
+    "exercises",
+    "source"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "const": "exercises"
+    },
+    "id": {
+      "$ref": "#/$defs/id",
+      "description": "練習ファイル ID（例: loop_03_ex01）"
+    },
+    "title": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string",
+      "description": "元の ipynb の相対パス"
+    },
+    "exercises": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/exercise"
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_\\-]*$"
+    },
+    "exercise": {
+      "type": "object",
+      "required": [
+        "id",
+        "question_type",
+        "knowledge_points",
+        "primary_knowledge_point",
+        "unit",
+        "difficulty",
+        "keywords",
+        "tags",
+        "hints",
+        "question",
+        "explanation",
+        "content_hash"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id",
+          "description": "問題 ID。内容を修正しても変えない"
+        },
+        "question_type": {
+          "enum": [
+            "choice",
+            "code"
+          ]
+        },
+        "knowledge_points": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "description": "関わる知識点。先頭が主知識点"
+        },
+        "primary_knowledge_point": {
+          "$ref": "#/$defs/id"
+        },
+        "difficulty": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "分類用ラベル（バグ取り・穴埋め・複数選択など）。表示・採点には影響しない"
+        },
+        "hints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "question": {
+          "type": "string",
+          "description": "問題文（markdown）"
+        },
+        "explanation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{16}$",
+          "description": "内容のハッシュ。取り込み時に変更を検出し、版番号を上げるのに使う"
+        },
+        "options": true,
+        "correct_answers": true,
+        "starter_code": true,
+        "solution_code": true,
+        "tests": true,
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "単元の練習ファイルの問題なら単元 ID（例: u_loop_for）、それ以外は null"
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "question_type": {
+                "const": "choice"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "options",
+              "correct_answers"
+            ],
+            "properties": {
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 2,
+                "maxItems": 6
+              },
+              "correct_answers": {
+                "type": "array",
+                "items": {
+                  "enum": [
+                    "A",
+                    "B",
+                    "C",
+                    "D",
+                    "E",
+                    "F"
+                  ]
+                },
+                "minItems": 1,
+                "uniqueItems": true,
+                "description": "正解の記号。複数正解の場合は複数"
+              }
+            },
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "starter_code"
+                  ]
+                },
+                {
+                  "required": [
+                    "solution_code"
+                  ]
+                },
+                {
+                  "required": [
+                    "tests"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "question_type": {
+                "const": "code"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "starter_code",
+              "solution_code",
+              "tests"
+            ],
+            "properties": {
+              "starter_code": {
+                "type": "string",
+                "description": "学生に配る初期コード（バグ取りならバグのあるコード）"
+              },
+              "solution_code": {
+                "type": "string",
+                "description": "模範解答（学生には見せない）"
+              },
+              "tests": {
+                "$ref": "#/$defs/tests"
+              }
+            },
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "options"
+                  ]
+                },
+                {
+                  "required": [
+                    "correct_answers"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "tests": {
+      "type": "object",
+      "required": [
+        "mode",
+        "timeout",
+        "cases"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "enum": [
+            "stdio",
+            "function"
+          ]
+        },
+        "timeout": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "cases": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "expected",
+              "public"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "input": {
+                "type": "string",
+                "description": "stdio：標準入力"
+              },
+              "call": {
+                "type": "string",
+                "description": "function：評価する式（例: total(3)）"
+              },
+              "expected": {
+                "description": "stdio：期待する標準出力（文字列）／function：期待する戻り値"
+              },
+              "public": {
+                "type": "boolean",
+                "description": "true なら入出力例として学生に見せる"
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "stdio"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "cases": {
+                "items": {
+                  "required": [
+                    "input"
+                  ],
+                  "properties": {
+                    "expected": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "function"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "cases": {
+                "items": {
+                  "required": [
+                    "call"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

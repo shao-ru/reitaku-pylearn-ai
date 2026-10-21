@@ -1,0 +1,15 @@
+# 知識グラフ：問題解決（応用層。初期範囲外の参考）
+type: graph
+topic: app
+title: 問題解決
+
+knowledge_points:
+  - {id: app_01, title: 仕様から入出力を設計する, layer: 応用, difficulty: 5}
+  - {id: app_02, title: 処理を関数に分割する, layer: 応用, difficulty: 6}
+  - {id: app_03, title: テストケースで確かめる, layer: 応用, difficulty: 5}
+
+relations:
+  - {from: pat_11, to: app_01, type: prerequisite}
+  - {from: func_03, to: app_02, type: prerequisite}
+  - {from: func_07, to: app_02, type: prerequisite}
+  - {from: func_03, to: app_03, type: prerequisite}

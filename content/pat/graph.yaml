@@ -1,0 +1,51 @@
+# 知識グラフ：定型パターン（構造層）
+# 文法要素を組み合わせた、名前を付けられる定番の書き方。トピックをまたいで使われるため、ここにまとめる。
+type: graph
+topic: pat
+title: 定型パターン
+
+knowledge_points:
+  - {id: pat_01, title: 累積（合計・平均）, layer: 構造, difficulty: 2,
+     description: ループの前で 0 に初期化し、ループの中で += する。, keywords: [累積, 合計, 平均, 初期化]}
+  - {id: pat_02, title: カウント（条件を満たす個数）, layer: 構造, difficulty: 2, keywords: [カウンタ]}
+  - {id: pat_03, title: 最大値・最小値の更新, layer: 構造, difficulty: 3,
+     description: 最初の要素で初期化し、より大きい（小さい）値が来たら更新する。, keywords: [最大値, 最小値, 更新]}
+  - {id: pat_04, title: フィルタ（条件を満たす要素を集める）, layer: 構造, difficulty: 3, keywords: [条件付きリスト作成]}
+  - {id: pat_05, title: 変換（各要素を加工して新しいリストを作る）, layer: 構造, difficulty: 3, keywords: [append, リスト作成]}
+  - {id: pat_06, title: 探索（見つけたら止める）, layer: 構造, difficulty: 3, keywords: [break, フラグ, 見つからない場合]}
+  - {id: pat_07, title: 辞書による集計（頻度・グループ別合計）, layer: 構造, difficulty: 4,
+     description: 例：文字列中の単語の出現頻度を数える。, keywords: [頻度, get, 集計]}
+  - {id: pat_08, title: 全組み合わせの生成, layer: 構造, difficulty: 4, keywords: [二重ループ, 総当たり, 重複なし]}
+  - {id: pat_09, title: 前の要素との比較, layer: 構造, difficulty: 4, keywords: [差分, 単調増加]}
+  - {id: pat_10, title: 区切り付きの文字列の組み立て, layer: 構造, difficulty: 3, keywords: [join, 区切り文字]}
+  - {id: pat_11, title: 入力→処理→出力の基本形, layer: 構造, difficulty: 2, keywords: [入力, 変換, 出力]}
+
+relations:
+  - {from: loop_01, to: pat_01, type: prerequisite}
+  - {from: var_06, to: pat_01, type: prerequisite}
+  - {from: pat_01, to: pat_02, type: prerequisite}
+  - {from: cond_01, to: pat_02, type: prerequisite}
+  - {from: loop_01, to: pat_03, type: prerequisite}
+  - {from: cond_01, to: pat_03, type: prerequisite}
+  - {from: loop_01, to: pat_04, type: prerequisite}
+  - {from: cond_01, to: pat_04, type: prerequisite}
+  - {from: col_02, to: pat_04, type: prerequisite}
+  - {from: loop_01, to: pat_05, type: prerequisite}
+  - {from: col_02, to: pat_05, type: prerequisite}
+  - {from: loop_09, to: pat_06, type: prerequisite}
+  - {from: cond_01, to: pat_06, type: prerequisite}
+  - {from: col_07, to: pat_07, type: prerequisite}
+  - {from: pat_02, to: pat_07, type: prerequisite}
+  - {from: loop_08, to: pat_08, type: prerequisite}
+  - {from: loop_02, to: pat_08, type: prerequisite}
+  - {from: loop_01, to: pat_09, type: prerequisite}
+  - {from: col_01, to: pat_09, type: prerequisite}
+  - {from: loop_01, to: pat_10, type: prerequisite}
+  - {from: var_08, to: pat_10, type: prerequisite}
+  - {from: io_01, to: pat_10, type: prerequisite}
+  - {from: io_03, to: pat_11, type: prerequisite}
+  - {from: io_05, to: pat_11, type: prerequisite}
+
+  - {from: pat_01, to: pat_03, type: related_error, weight: 0.8, note: 初期化の位置（ループの中に書く）や初期値（最大値を 0 で初期化）の誤り}
+  - {from: pat_01, to: loop_01, type: related_error, weight: 0.7, note: 累積や print のインデントがずれてループの中・外を取り違える}
+  - {from: pat_07, to: var_08, type: related, note: 単語の頻度は split で分割してから集計する}

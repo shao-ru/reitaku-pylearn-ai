@@ -1,0 +1,42 @@
+# ================================================================
+# 知識グラフ定義テンプレート
+#   1トピック = 1ファイル（例: content/loop/graph.yaml）
+#   このファイルをコピーして、トピック名のフォルダに graph.yaml として置く
+# ================================================================
+type: graph              # 固定（このファイルが知識グラフであることを示す）
+topic: template          # トピックの ID（英小文字・数字・_）
+title: テンプレート       # トピックの表示名
+
+knowledge_points:
+  - id: tmpl_01          # 知識点 ID（全トピックで一意。「トピック_連番」を推奨）
+    title: 知識点のタイトル
+    layer: 文法          # 文法 / 構造 / アルゴリズム / 応用（判定基準は docs/knowledge_graph.md）
+    difficulty: 1        # 1〜9（1-3 初級、4-6 中級、7-9 上級）
+    order: 1             # トピック内の表示順
+    keywords: [キーワード1, キーワード2]
+    description: この知識点で学ぶことを1〜2文で書く（省略可）
+
+  - id: tmpl_02
+    title: 二つ目の知識点
+    layer: 構造
+    difficulty: 2
+    order: 2
+    keywords: [キーワード3]
+
+relations:
+  # type: prerequisite  … from を習得してから to を学ぶ（先修関係。循環は禁止）
+  #       related_error … 混同しやすい・同じ誤りが出やすい（エラー診断に使う）
+  #       related       … 概念として関連する（学習順序には影響しない。向きなし）
+  #       contains      … from が to を含む（現在は使っていない）
+  # weight: 関係の強さ 0.0〜1.0（省略時 1.0）
+  # 他のトピックの知識点 ID も指定できる。トピックをまたぐ関係は「後で学ぶ側」のファイルに書く
+  - {from: tmpl_01, to: tmpl_02, type: prerequisite, weight: 1.0, note: 関係の説明（省略可）}
+  - {from: tmpl_01, to: tmpl_02, type: related, note: 概念としての関連（例：変数 ~ スコープ）}
+
+# 単元（任意）：このトピックの一部を範囲とする総合演習など
+#   ・トピック全体を範囲とする単元（ID = topic）は自動で作られるので書かなくてよい
+#   ・トピックをまたぐ単元は content/units.yaml に書く
+units:
+  - id: u_tmpl_mix               # 単元 ID は u_ で始める
+    title: テンプレート 総合演習
+    knowledge_points: [tmpl_01, tmpl_02]   # 範囲（topics: [トピック名] でトピック単位でも指定できる）

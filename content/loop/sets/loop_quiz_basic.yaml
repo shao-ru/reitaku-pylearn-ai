@@ -1,0 +1,14 @@
+# 題単（静的）：全員に同じ問題を同じ順で出す。小テスト・課題向け。
+type: set
+id: set_loop_quiz_basic
+title: for文 基礎 小テスト
+description: for文の基本構文と range の確認。選択問題4問 + コード問題2問。
+mode: static
+shuffle: false        # true にすると出題順をランダムにする
+items:
+  - loop_01_q01
+  - loop_01_q05
+  - loop_02_q02
+  - loop_02_q05
+  - loop_02_c01
+  - loop_02_c02

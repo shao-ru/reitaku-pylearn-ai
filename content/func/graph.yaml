@@ -1,0 +1,32 @@
+# 知識グラフ：関数
+type: graph
+topic: func
+title: 関数
+
+knowledge_points:
+  - {id: func_01, title: 関数の定義と呼び出し, layer: 文法, difficulty: 2, keywords: [def]}
+  - {id: func_02, title: 引数, layer: 文法, difficulty: 2}
+  - {id: func_03, title: 戻り値（return と print の違い）, layer: 文法, difficulty: 3, keywords: [return]}
+  - {id: func_04, title: デフォルト引数・キーワード引数, layer: 文法, difficulty: 3}
+  - {id: func_05, title: 変数のスコープ, layer: 文法, difficulty: 4, keywords: [ローカル変数, グローバル変数, global, UnboundLocalError]}
+  - {id: func_06, title: 組み込み関数とモジュールの import, layer: 文法, difficulty: 2, keywords: [import, math, random]}
+  - {id: func_07, title: リストを受け取る・返す関数, layer: 文法, difficulty: 4}
+  - {id: func_08, title: 再帰の仕組み, layer: 文法, difficulty: 6}
+
+relations:
+  - {from: var_01, to: func_01, type: prerequisite}
+  - {from: func_01, to: func_02, type: prerequisite}
+  - {from: func_02, to: func_03, type: prerequisite}
+  - {from: func_03, to: func_04, type: prerequisite}
+  - {from: func_01, to: func_05, type: prerequisite}
+  - {from: var_01, to: func_05, type: prerequisite}
+  - {from: func_01, to: func_06, type: prerequisite}
+  - {from: func_03, to: func_07, type: prerequisite}
+  - {from: col_01, to: func_07, type: prerequisite}
+  - {from: loop_01, to: func_07, type: prerequisite}
+  - {from: func_03, to: func_08, type: prerequisite}
+  - {from: cond_02, to: func_08, type: prerequisite, note: 再帰の終了条件}
+
+  - {from: func_03, to: io_01, type: related_error, weight: 0.9, note: return と print を混同する（戻り値が None になる）}
+  - {from: func_05, to: var_01, type: related, note: スコープは「変数」の概念を関数の中に広げたもの}
+  - {from: func_06, to: col_04, type: related, note: sum・max なども組み込み関数}

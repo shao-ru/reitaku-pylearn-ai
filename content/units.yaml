@@ -1,0 +1,24 @@
+# トピックをまたぐ単元
+# ・各トピックには、そのトピック全体を範囲とする単元（ID はトピック名）が自動で作られる
+# ・トピックの一部だけを範囲とする単元は、そのトピックの graph.yaml に書く（例：u_loop_for）
+type: units
+
+units:
+  - id: u_calc
+    title: 計算プログラム
+    description: 変数・入出力と「入力→処理→出力」の基本形を組み合わせる。
+    topics: [var, io]
+    knowledge_points: [pat_11]
+
+  - id: u_loop_col
+    title: for文とコレクション
+    topics: [loop, col]
+    knowledge_points: [pat_04, pat_05, pat_07]
+
+  - id: u_func_pat
+    title: 関数で書くパターン
+    knowledge_points: [func_01, func_02, func_03, func_07, pat_01, pat_02, pat_03, pat_04, pat_05, pat_06, pat_07]
+
+  - id: u_midterm
+    title: 前半まとめ（中間テスト範囲）
+    topics: [var, io, cond, col, loop, pat]

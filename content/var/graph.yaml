@@ -1,0 +1,25 @@
+# 知識グラフ：変数とデータ型
+type: graph
+topic: var
+title: 変数とデータ型
+
+knowledge_points:
+  - {id: var_01, title: 変数と代入, layer: 文法, difficulty: 1}
+  - {id: var_02, title: 数値型（int・float）と算術演算, layer: 文法, difficulty: 1, keywords: [int, float, +, -, '*', /, //, '%', '**'],
+     description: べき乗は ** で書く（^ はビット演算の XOR で、よくある誤り）}
+  - {id: var_03, title: 文字列の基本（連結・繰り返し・len）, layer: 文法, difficulty: 1, keywords: [str, +, '*', len]}
+  - {id: var_04, title: bool と比較演算, layer: 文法, difficulty: 1, keywords: [True, False, ==, '!=', <, '>']}
+  - {id: var_05, title: 型変換（int・float・str）, layer: 文法, difficulty: 2, keywords: [int(), float(), str(), type()]}
+  - {id: var_06, title: 複合代入演算子（+= など）, layer: 文法, difficulty: 1, keywords: [+=, -=, '*=', /=]}
+  - {id: var_07, title: 文字列のインデックスとスライス, layer: 文法, difficulty: 2}
+  - {id: var_08, title: 文字列メソッド（split・join・replace など）, layer: 文法, difficulty: 3, keywords: [split, join, replace, upper, lower, strip]}
+
+relations:
+  - {from: var_01, to: var_02, type: prerequisite}
+  - {from: var_01, to: var_03, type: prerequisite}
+  - {from: var_01, to: var_04, type: prerequisite}
+  - {from: var_02, to: var_05, type: prerequisite}
+  - {from: var_03, to: var_05, type: prerequisite}
+  - {from: var_02, to: var_06, type: prerequisite}
+  - {from: var_03, to: var_07, type: prerequisite}
+  - {from: var_07, to: var_08, type: prerequisite}
