@@ -55,6 +55,7 @@ Python とパッケージの管理には [uv](https://docs.astral.sh/uv/) を使
 
 | 読む順 | 文書 | 内容 |
 | --- | --- | --- |
+| **学生** | [docs/student/README.md](docs/student/README.md) | **教材づくりを始める人はまずこれ**（手順・知識点一覧・見本） |
 | 1 | [docs/knowledge_graph.md](docs/knowledge_graph.md) | 知識グラフの設計方針（層・トピック・知識点・単元・関係） |
 | 2 | [docs/authoring_guide.md](docs/authoring_guide.md) | **教材を作る・追加する手順**、共同作業のルール、よく出るエラー |
 | 3 | [docs/content_format.md](docs/content_format.md) | ファイル形式の仕様（属性・セクション・テスト・ID） |

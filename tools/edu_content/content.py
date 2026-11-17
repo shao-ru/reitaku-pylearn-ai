@@ -93,7 +93,8 @@ def check_all(data: dict, report: Report, run_code: bool = True) -> dict:
     seen: dict[str, str] = {}
     for le in data["lessons"]:
         if le["id"] in seen:
-            report.error(le["source"], f"ID が重複: {le['id']}（{seen[le['id']]}）")
+            report.error(le["source"], f"ID が重複: {le['id']}（{seen[le['id']]}）。"
+                         "メタデータの id を「lesson_知識点ID」に書き換えてください（例：lesson_var_03）")
         seen[le["id"]] = le["source"]
         for k in le["knowledge_points"]:
             if k not in kp_ids:
@@ -105,14 +106,17 @@ def check_all(data: dict, report: Report, run_code: bool = True) -> dict:
     ex_seen: dict[str, str] = {}
     for ef in data["exercise_files"]:
         if ef["id"] in seen:
-            report.error(ef["source"], f"ID が重複: {ef['id']}（{seen[ef['id']]}）")
+            report.error(ef["source"], f"ID が重複: {ef['id']}（{seen[ef['id']]}）。"
+                         "メタデータの id をファイル名に合わせて書き換えてください（例：var_03_ex01）")
         seen[ef["id"]] = ef["source"]
         for ex in ef["exercises"]:
             w = f"{ex['source']} 問題 {ex['id']}"
             if ex["id"] is None:
                 continue  # ID なしは解析時にエラー済み
             if ex["id"] in ex_seen:
-                report.error(w, f"問題 ID が重複（{ex_seen[ex['id']]}）")
+                report.error(w, f"問題 ID が重複（{ex_seen[ex['id']]}）。"
+                             "見本や他のファイルから ID をコピーした場合は、新しく作った問題の見出しを"
+                             "「## 問題」だけに戻して assign-ids を実行してください")
             ex_seen[ex["id"]] = ex["source"]
             for k in ex["knowledge_points"]:
                 if k not in kp_ids:
