@@ -41,7 +41,8 @@ def normalize_output(text: str) -> str:
     return "\n".join(lines)
 
 
-# Windows（cp932）でも日本語の入出力を正しく扱えるよう UTF-8 に固定する
+# Windows（cp932 など）でも日本語の入出力を正しく扱えるよう UTF-8 に固定する。
+# -I（隔離モード）では PYTHON* の環境変数が無視されるため、子プロセスには -X utf8 も渡す。
 _ENV = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
 
 
@@ -55,7 +56,7 @@ def run_tests(code: str, tests: dict) -> list[dict]:
             results = []
             for c in tests["cases"]:
                 try:
-                    p = subprocess.run([sys.executable, "-I", str(prog)], input=c["input"],
+                    p = subprocess.run([sys.executable, "-I", "-X", "utf8", str(prog)], input=c["input"],
                                        capture_output=True, text=True, encoding="utf-8",
                                        timeout=timeout, cwd=tmp, env=_ENV)
                 except subprocess.TimeoutExpired:
@@ -72,7 +73,7 @@ def run_tests(code: str, tests: dict) -> list[dict]:
         harness.write_text(_FUNCTION_HARNESS, encoding="utf-8")
         payload = json.dumps([{"call": c["call"], "expected": c["expected"]} for c in tests["cases"]])
         try:
-            p = subprocess.run([sys.executable, "-I", str(harness), str(prog)], input=payload,
+            p = subprocess.run([sys.executable, "-I", "-X", "utf8", str(harness), str(prog)], input=payload,
                                capture_output=True, text=True, encoding="utf-8",
                                timeout=timeout * max(1, len(tests["cases"])), cwd=tmp, env=_ENV)
         except subprocess.TimeoutExpired:
